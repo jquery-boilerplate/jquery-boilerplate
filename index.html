@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Boilerplate</title>
+
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<style>
+  article, aside, figure, footer, header, hgroup, menu, nav, section { display: block; }
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+    // attach the plugin to an element
+    $('#hello').pluginName({'foo': 'bar'});
+
+    // call a public method
+    $('#hello').data('pluginName').foo_public_method();
+
+    // get the value of a property
+    $('#hello').data('pluginName').settings.foo;
+
+});
+
+</script>
+
+</head>
+<body>
+  <p id="hello">Hello World</p>
+</body>
+</html>
