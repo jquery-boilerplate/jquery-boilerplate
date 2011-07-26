@@ -28,7 +28,7 @@
 
                 // the plugin's final properties are the merged default and user-provided properties (if any)
                 // this has the advantage of not polluting the defaults, making them re-usable
-                this.$1.settings = \$.extend({}, $1, options);
+                this.$1.settings = \$.extend({}, this.$1.defaults, options);
 
                 // iterate through all the DOM elements we are attaching the plugin to
                 return this.each(function() {
