@@ -1,105 +1,79 @@
-
 // remember to change every instance of "pluginName" to the name of your plugin!
-(function($) {
+// the semicolon at the beginning is there on purpose in order to protect the integrity of your scripts when
+// mixed with incomplete objects, arrays, etc.
+;(function($) {
 
-    // here it goes!
-    $.fn.pluginName = function(method) {
+    // we need attach the plugin to jQuery's namespace or otherwise it would not be
+    // available outside this function's scope
+    // "el" should be a jQuery object or a collection of jQuery objects as returned by
+    // jQuery's selector engine
+    $.pluginName = function(el, options) {
+
+        // plugin's default options
+        // this is private property and is accessible only from inside the plugin
+        var defaults = {
+
+            propertyName: 'value',
+
+            // if your plugin is event-driven, you may provide callback capabilities for its events.
+            // call these functions before or after events of your plugin, so that users may "hook"
+            // custom functions to those particular events without altering the plugin's code
+            onSomeEvent: function() {}
+
+        }
+
+        // to avoid confusions, use "plugin" to reference the current instance of the object
+        var plugin = this;
+
+        // this will hold the merged default, and user-provided options
+        // plugin's properties will be accessible like:
+        // plugin.settings.propertyName from inside the plugin or
+        // myplugin.settings.propertyName from outside the plugin
+        // where "myplugin" is an instance of the plugin
+        plugin.settings = {}
+
+        // the "constructor" method that gets called when the object is created
+        // this is a private method, it can be called only from inside the plugin
+        var init = function() {
+
+            // the plugin's final properties are the merged default and user-provided options (if any)
+            plugin.settings = $.extend({}, defaults, options);
+
+            // make the collection of target elements available throughout the plugin
+            // by making it a public property
+            plugin.el = el;
+
+            // code goes here
+
+        }
 
         // public methods
-        // to keep the $.fn namespace uncluttered, collect all of the plugin's methods in an object literal and call
-        // them by passing the string name of the method to the plugin
-        //
-        // public methods can be called as
-        // element.pluginName('methodName', arg1, arg2, ... argn)
-        // where "element" is the element the plugin is attached to, "pluginName" is the name of your plugin and
-        // "methodName" is the name of a function available in the "methods" object below; arg1 ... argn are arguments
-        // to be passed to the method
-        //
-        // or, from inside the plugin:
-        // methods.methodName(arg1, arg2, ... argn)
-        // where "methodName" is the name of a function available in the "methods" object below
-        var methods = {
+        // these methods can be called like:
+        // plugin.methodName(arg1, arg2, ... argn) from inside the plugin or
+        // myplugin.publicMethod(arg1, arg2, ... argn) from outside the plugin
+        // where "myplugin" is an instance of the plugin
 
-            // this the constructor method that gets called when the object is created
-            init : function(options) {
+        // a public method. for demonstration purposes only - remove it!
+        plugin.foo_public_method = function() {
 
-                // the plugin's final properties are the merged default and user-provided properties (if any)
-                // this has the advantage of not polluting the defaults, making them re-usable
-                this.pluginName.settings = $.extend({}, this.pluginName.defaults, options);
-
-                // iterate through all the DOM elements we are attaching the plugin to
-                return this.each(function() {
-
-                    var $element = $(this), // reference to the jQuery version of the current DOM element
-                        element = this;     // reference to the actual DOM element
-
-                    // code goes here
-
-                });
-
-            },
-
-            // a public method. for demonstration purposes only - remove it!
-            foo_public_method: function() {
-
-                // code goes here
-
-            }
+            // code goes here
 
         }
 
         // private methods
-        // these methods can be called only from inside the plugin
-        //
-        // private methods can be called as
-        // helpers.methodName(arg1, arg2, ... argn)
-        // where "methodName" is the name of a function available in the "helpers" object below; arg1 ... argn are
-        // arguments to be passed to the method
-        var helpers = {
+        // these methods can be called only from inside the plugin like:
+        // methodName(arg1, arg2, ... argn)
 
-            // a private method. for demonstration purposes only - remove it!
-            foo_private_method: function() {
+        // a private method. for demonstration purposes only - remove it!
+        var foo_private_method = function() {
 
-                // code goes here
-
-            }
+            // code goes here
 
         }
 
-        // if a method as the given argument exists
-        if (methods[method]) {
-
-            // call the respective method
-            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-
-        // if an object is given as method OR nothing is given as argument
-        } else if (typeof method === 'object' || !method) {
-
-            // call the initialization method
-            return methods.init.apply(this, arguments);
-
-        // otherwise
-        } else {
-
-            // trigger an error
-            $.error( 'Method "' +  method + '" does not exist in pluginName plugin!');
-
-        }
+        // call the "constructor" method
+        init();
 
     }
-
-    // plugin's default options
-    $.fn.pluginName.defaults = {
-
-        foo: 'bar'
-
-    }
-
-    // this will hold the merged default and user-provided options
-    // you will have access to these options like:
-    // this.pluginName.settings.propertyName from inside the plugin or
-    // element.pluginName.settings.propertyName from outside the plugin, where "element" is the element the
-    // plugin is attached to;
-    $.fn.pluginName.settings = {}
 
 })(jQuery);

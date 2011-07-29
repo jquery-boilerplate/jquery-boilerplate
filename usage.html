@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Boilerplate</title>
+</head>
+
+<body>
+    <p>Hello World</p>
+</body>
+
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    // create a new instance of the plugin
+    var myplugin = new $.pluginName($('#element'));
+
+    // call a public method
+    myplugin.foo_public_method();
+
+    // get the value of a public property
+    myplugin.settings.property;
+
+});
+</script>
+</html>
