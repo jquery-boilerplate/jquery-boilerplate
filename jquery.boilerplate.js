@@ -9,7 +9,7 @@
 		// this is private property and is accessible only from inside the plugin
 		var defaults = {
 			propertyName : 'value',
-    	};
+    		};
 
 		// maintaining chainability
 		return this.each(function() {
