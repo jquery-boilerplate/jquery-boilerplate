@@ -11,15 +11,15 @@
 			propertyName : 'value',
     		};
 
+		// lets merge options with default settings
+		options = $.extend( {}, defaults, options );
+
 		// maintaining chainability
 		return this.each(function() {
 
-			var $this = $(this);        
-		
-			// If options exist, lets merge them with our default settings
-			if (options) { 
-				$.extend(defaults, options);
-			}
+			var $this = $( this );
+
+			// your code here
 
 		});
 
