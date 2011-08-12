@@ -1,7 +1,5 @@
-$(document).ready(function() {
-
+jQuery(function($) {
 	$('#someElement').pluginName({
-	  'propertyName' : 'value'
+	  propertyName : 'value'
 	});
-
 });
