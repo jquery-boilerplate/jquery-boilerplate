@@ -54,7 +54,7 @@
         // where "myplugin" is an instance of the plugin
 
         // a public method. for demonstration purposes only - remove it!
-        plugin.foo_public_method = function() {
+        plugin.fooPublicMethod = function() {
 
             // code goes here
 
@@ -65,7 +65,7 @@
         // methodName(arg1, arg2, ... argn)
 
         // a private method. for demonstration purposes only - remove it!
-        var foo_private_method = function() {
+        var fooPrivateMethod = function() {
 
             // code goes here
 
