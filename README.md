@@ -4,7 +4,8 @@
 Contains lots of comments to help you get going easily. It is truly object-oriented, it implements public and private methods as well as public and private properties, making it the ideal candidate for when building both simple and complex jQuery plugins.
 
 ## What's in the box?
-
+ 
+ - jQuery 1.6.2 (used by Jasmine)
  - Jasmine for all your TDD needs
  - CoffeeScript because writing regular JS sucks
  - a Cakefile for building / minifying
