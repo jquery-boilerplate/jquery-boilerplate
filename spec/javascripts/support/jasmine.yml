@@ -1,7 +1,7 @@
 # src_files
 src_files:
   - dependencies/*.js
-  - dist/*.js
+  - src/*.coffee
 
 # stylesheets
 stylesheets:

@@ -2,7 +2,7 @@
 $ = jQuery
 
 # el is a jQuery selector object, or array
-$.flexirails = (el, options) ->
+$.pluginName = (el, options) ->
   defaults = 
     defaultValue: true
   
