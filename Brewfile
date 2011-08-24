@@ -1,0 +1,3 @@
+qt
+closure-compiler
+node

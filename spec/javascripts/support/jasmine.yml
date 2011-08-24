@@ -1,0 +1,20 @@
+# src_files
+src_files:
+  - dependencies/*.js
+  - dist/*.js
+
+# stylesheets
+stylesheets:
+
+# helpers
+helpers:
+
+# spec_files
+spec_files:
+  - **/*.test.coffee
+
+# src_dir
+src_dir:
+
+# spec_dir
+spec_dir:
