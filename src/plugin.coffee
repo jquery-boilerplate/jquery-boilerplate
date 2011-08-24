@@ -1,36 +1,38 @@
-# 
+# We need attach the plugin to jQuery's namespace or otherwise it would not be
+# available outside this function's scope
 $ = jQuery
 
-# el is a jQuery selector object, or array
+# "element" should be a jQuery object or a collection of jQuery objects as returned by
+# jQuery's selector engine
 $.pluginName = (el, options) ->
-  defaults = 
-    defaultValue: true
-  
+  # To avoid scope issues, use 'self' instead of 'this'
+  # to reference this class from internal events and functions.
   plugin = this
-  $el = el
   
-  plugin.settings = {}
+  # Access to jQuery version of element
+  plugin.$el = el
   
-  init = (options) ->
-    data = $el.data 'pluginName'
-    
-    if !data
-      plugin.settings = $.extend {}, defaults, options
-      plugin.el = el
-      
-      $el.data 'pluginName', plugin
-      # initialization completed
-    else
-      # already initialized
+  # Add a reverse reference to the DOM object
+  plugin.$el.data 'pluginName', plugin
   
-  init options
-  plugin
+  plugin.init = ->
+    plugin.options = $.extend {}, $.pluginName.defaultOptions, options
+    # Put your initialization code here
+  
+  plugin.init()
 
-# plugin instanciator
+# plugin's default options
+# this is private property and is accessible only from inside the plugin
+$.pluginName.defaultOptions = 
+  propertyName: 'value'
+
+# This function can be used just like every other jQuery function
+# Allows for chaining etc.
 $.fn.pluginName = (options) ->
   this.each ->
     new $.pluginName $(this), options
 
-# get the flexirails instance
+# This function breaks the chain, but returns
+# the pluginName if it has been attached to the object.
 $.fn.getPluginName = ->
   this.data 'pluginName'
