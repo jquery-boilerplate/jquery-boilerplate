@@ -4,10 +4,11 @@ $ = jQuery
 
 # your Plugin class
 class PluginName
-  initialize: (@el, options) ->
+  constructor: (@el, options = {}) ->
     # Add a reverse reference to the DOM object
     @el.data 'pluginName', @
     
+    # overwrite the default options with given options
     @options = $.extend {}, PluginName::defaultOptions, options
     # Put your initialization code here
 
