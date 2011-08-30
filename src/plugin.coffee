@@ -4,7 +4,7 @@ $ = jQuery
 
 # "element" should be a jQuery object or a collection of jQuery objects as returned by
 # jQuery's selector engine
-$.pluginName = (el, options) ->
+$.pluginName = (el, options = {}) ->
   # To avoid scope issues, use 'self' instead of 'this'
   # to reference this class from internal events and functions.
   plugin = this
