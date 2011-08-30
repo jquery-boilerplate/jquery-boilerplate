@@ -1,3 +1,0 @@
-qt
-closure-compiler
-node
