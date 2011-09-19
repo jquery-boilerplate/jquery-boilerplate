@@ -1,79 +1,60 @@
-// remember to change every instance of "pluginName" to the name of your plugin!
-// the semicolon at the beginning is there on purpose in order to protect the integrity of your scripts when
-// mixed with incomplete objects, arrays, etc.
-;(function($) {
+/*
+ *  Project: 
+ *  Description: 
+ *  Author: 
+ *  License: 
+ */
 
-    // we need attach the plugin to jQuery's namespace or otherwise it would not be
-    // available outside this function's scope
-    // "el" should be a jQuery object or a collection of jQuery objects as returned by
-    // jQuery's selector engine
-    $.pluginName = function(el, options) {
 
-        // plugin's default options
-        // this is private property and is accessible only from inside the plugin
-        var defaults = {
+// the semi-colon before function invocation is a safety net against concatenated 
+// scripts and/or other plugins which may not be closed properly.
+;(function ( $, window, document, undefined ) {
+    
+    // undefined is used here as the undefined global variable in ECMAScript 3 is
+    // mutable (ie. it can be changed by someone else). undefined isn't really being
+    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
+    // can no longer be modified.
+    
+    // window and document are passed through as local variables rather than globals
+    // as this (slightly) quickens the resolution process and can be more efficiently
+    // minified (especially when both are regularly referenced in your plugin).
 
-            propertyName: 'value',
+    // Create the defaults once
+    var pluginName = 'defaultPluginName',
+        defaults = {
+            propertyName: "value"
+        };
 
-            // if your plugin is event-driven, you may provide callback capabilities for its events.
-            // call these functions before or after events of your plugin, so that users may "hook"
-            // custom functions to those particular events without altering the plugin's code
-            onSomeEvent: function() {}
+    // The actual plugin constructor
+    function Plugin( element, options ) {
+        this.element = element;
 
-        }
-
-        // to avoid confusions, use "plugin" to reference the current instance of the object
-        var plugin = this;
-
-        // this will hold the merged default, and user-provided options
-        // plugin's properties will be accessible like:
-        // plugin.settings.propertyName from inside the plugin or
-        // myplugin.settings.propertyName from outside the plugin
-        // where "myplugin" is an instance of the plugin
-        plugin.settings = {}
-
-        // the "constructor" method that gets called when the object is created
-        // this is a private method, it can be called only from inside the plugin
-        var init = function() {
-
-            // the plugin's final properties are the merged default and user-provided options (if any)
-            plugin.settings = $.extend({}, defaults, options);
-
-            // make the collection of target elements available throughout the plugin
-            // by making it a public property
-            plugin.el = el;
-
-            // code goes here
-
-        }
-
-        // public methods
-        // these methods can be called like:
-        // plugin.methodName(arg1, arg2, ... argn) from inside the plugin or
-        // myplugin.publicMethod(arg1, arg2, ... argn) from outside the plugin
-        // where "myplugin" is an instance of the plugin
-
-        // a public method. for demonstration purposes only - remove it!
-        plugin.fooPublicMethod = function() {
-
-            // code goes here
-
-        }
-
-        // private methods
-        // these methods can be called only from inside the plugin like:
-        // methodName(arg1, arg2, ... argn)
-
-        // a private method. for demonstration purposes only - remove it!
-        var fooPrivateMethod = function() {
-
-            // code goes here
-
-        }
-
-        // call the "constructor" method
-        init();
-
+        // jQuery has an extend method which merges the contents of two or 
+        // more objects, storing the result in the first object. The first object
+        // is generally empty as we don't want to alter the default options for
+        // future instances of the plugin
+        this.options = $.extend( {}, defaults, options) ;
+        
+        this._defaults = defaults;
+        this._name = pluginName;
+        
+        this.init();
     }
 
-})(jQuery);
+    Plugin.prototype.init = function () {
+        // Place initialization logic here
+        // You already have access to the DOM element and the options via the instance, 
+        // e.g., this.element and this.options
+    };
+
+    // A really lightweight plugin wrapper around the constructor, 
+    // preventing against multiple instantiations
+    $.fn[pluginName] = function ( options ) {
+        return this.each(function () {
+            if (!$.data(this, 'plugin_' + pluginName)) {
+                $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
+            }
+        });
+    }
+
+})(jQuery, window);
