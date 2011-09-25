@@ -1,3 +1,6 @@
+# author: Raphael Randschau
+# version: v0.1
+#
 # We need attach the plugin to jQuery's namespace or otherwise it would not be
 # available outside this function's scope
 $ = jQuery
@@ -23,7 +26,7 @@ $.pluginName = (el, options = {}) ->
 
 # plugin's default options
 # this is private property and is accessible only from inside the plugin
-$.pluginName.defaultOptions = 
+$.pluginName.defaultOptions =
   propertyName: 'value'
 
 # This function can be used just like every other jQuery function
