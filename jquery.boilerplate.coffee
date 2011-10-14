@@ -21,7 +21,7 @@
 
   # The actual plugin constructor
   class Plugin
-    constructor: (@elements, options) ->
+    constructor: (@element, options) ->
       # jQuery has an extend method which merges the contents of two or
       # more objects, storing the result in the first object. The first object
       # is generally empty as we don't want to alter the default options for
