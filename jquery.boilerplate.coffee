@@ -17,11 +17,11 @@
   # Create the defaults once
   pluginName = 'defaultPluginName'
   defaults =
-    property: "value"
+    property: 'value'
 
   # The actual plugin constructor
   class Plugin
-    constructor: (@elements, options) ->
+    constructor: (@element, options) ->
       # jQuery has an extend method which merges the contents of two or
       # more objects, storing the result in the first object. The first object
       # is generally empty as we don't want to alter the default options for
@@ -40,8 +40,8 @@
 
   # A really lightweight plugin wrapper around the constructor,
   # preventing against multiple instantiations
-  $.fn[pluginName] = ( options ) ->
+  $.fn[pluginName] = (options) ->
     this.each ->
-      if !$.data(this, 'plugin_' + pluginName)
-        $.data(this, 'plugin_' + pluginName, new Plugin(this, options))
+      if !$.data(this, "plugin_#{pluginName}")
+        $.data(this, "plugin_#{pluginName}", new Plugin(this, options))
 )(jQuery, window, document)
