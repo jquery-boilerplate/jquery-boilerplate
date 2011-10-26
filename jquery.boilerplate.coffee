@@ -38,10 +38,19 @@
       # You already have access to the DOM element and the options via the instance,
       # e.g., this.element and this.options
 
-  # A really lightweight plugin wrapper around the constructor,
-  # preventing against multiple instantiations
-  $.fn[pluginName] = (options) ->
-    this.each ->
-      if !$.data(this, "plugin_#{pluginName}")
-        $.data(this, "plugin_#{pluginName}", new Plugin(this, options))
+  # A really lightweight plugin wrapper around the constructor, 
+  # preventing against multiple instantiations and allowing any
+  # public function (ie. a function whose name doesn't start
+  # with an underscore) to be called via the jQuery plugin,
+  # e.g. $(element).defaultPluginName('functionName', arg1, arg2)
+  $.fn[pluginName] = (options, args...) ->
+    if options is undefined or typeof options is 'object'
+      this.each ->
+        if !$.data(this, "plugin_#{pluginName}")
+          $.data(this, "plugin_#{pluginName}", new Plugin(this, options))
+    else if typeof options is 'string' and options[0] isnt '_' and options isnt 'init'
+      this.each ->
+        instance = $.data(this, "plugin_#{pluginName}")
+        if instance instanceof Plugin and typeof instance[options] is 'function'
+          instance[options].apply( instance, args)
 )(jQuery, window, document)
