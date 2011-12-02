@@ -41,7 +41,7 @@
   # A really lightweight plugin wrapper around the constructor,
   # preventing against multiple instantiations
   $.fn[pluginName] = (options) ->
-    this.each ->
+    @each ->
       if !$.data(this, "plugin_#{pluginName}")
-        $.data(this, "plugin_#{pluginName}", new Plugin(this, options))
+        $.data(@, "plugin_#{pluginName}", new Plugin(@, options))
 )(jQuery, window, document)
