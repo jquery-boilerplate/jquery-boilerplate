@@ -54,7 +54,7 @@
 
     Plugin.prototype.init = function () {
       /**
-       * Mettez votrre logique d'initialisation ici
+       * Mettez votre logique d'initialisation ici
        * Vous avez déjà accès à l'élément DOM et les options via l'instance,
        * par ex. : this.element et this.options
        */

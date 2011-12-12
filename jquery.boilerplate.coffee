@@ -7,9 +7,9 @@
 # si le plugin est concaténé avec d'autre scripts et/ou d'autres plugin qui
 # pourraient ne pas avoir été convenablement fermés.
 ``
-# À noter que compilé avec Coffeescript, le plugin est automatiquement enclos
-# dans une fonction anonyme. Nous n'avons pas non plus besoin de lui passer
-# "undefined", puisque Coffeescript utilise "void 0" à la place.
+# À noter que compilé avec Coffeescript, le plugin est automatiquement
+# encapsulé dans une fonction anonyme. Nous n'avons pas non plus besoin de lui
+# passer "undefined", puisque Coffeescript utilise "void 0" à la place.
 (($, window, document) ->
   # "window" et "document" sont passé par des variables locales plutôt que par
   # les globales, cela accélère (relativement) le processus de résolution et
