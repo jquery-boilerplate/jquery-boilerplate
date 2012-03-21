@@ -55,6 +55,6 @@
                 $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
             }
         });
-    }
+    };
 
-})(jQuery, window);
+}(jQuery, window));
