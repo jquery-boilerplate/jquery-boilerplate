@@ -1,7 +1,7 @@
 LIB_NAME = "jquery.boilerplate"
 LIB_ROOT = File.expand_path(File.dirname(__FILE__))
 
-task :default => [:whitespace, :jshint, :clean, :dist]
+task :default => [:coffee, :whitespace, :jshint, :clean, :dist]
 
 desc "Clean the distribution directory."
 task :clean do
