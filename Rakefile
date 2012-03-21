@@ -108,3 +108,12 @@ Jshintrb::JshintTask.new :jshint do |t|
       :predef => ['jQuery']
   }
 end
+
+desc "Compile coffee-script"
+task :coffee do
+  require "coffee-script"
+  src, target = File.join(LIB_ROOT, LIB_NAME + ".coffee"), File.join(LIB_ROOT, LIB_NAME + ".js")
+  File.open(target, 'w') do |f| 
+    f.write(CoffeeScript.compile(File.read(src)))
+  end
+end
