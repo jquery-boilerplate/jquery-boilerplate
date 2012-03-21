@@ -5,17 +5,18 @@
 
 # the semi-colon before function invocation is a safety net against concatenated
 # scripts and/or other plugins which may not be closed properly.
-``
+
 # Note that when compiling with coffeescript, the plugin is wrapped in another
 # anonymous function. We do not need to pass in undefined as well, since
 # coffeescript uses (void 0) instead.
-(($, window, document) ->
-  # window and document are passed through as local variables rather than globals
+(($, window) ->
+  # window is passed through as local variable rather than global
   # as this (slightly) quickens the resolution process and can be more efficiently
   # minified (especially when both are regularly referenced in your plugin).
 
   # Create the defaults once
   pluginName = 'defaultPluginName'
+  document = window.document
   defaults =
     property: 'value'
 
@@ -44,4 +45,4 @@
     @each ->
       if !$.data(this, "plugin_#{pluginName}")
         $.data(@, "plugin_#{pluginName}", new Plugin(@, options))
-)(jQuery, window, document)
+)(jQuery, window)
