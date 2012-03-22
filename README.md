@@ -41,17 +41,17 @@ bundle install
 ### See all available rake tasks
 
 ```
-bundle exec rake -T
+rake -T
 ```
 
 ### Run default rake task
 
 ```
-bundle exec rake
+rake
 ```
 
-### Run `taskname` rake task 
+### Run `taskname` rake task
 
 ```
-bundle exec rake taskname
+rake taskname
 ```

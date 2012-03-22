@@ -1,6 +1,9 @@
 LIB_NAME = "jquery.boilerplate"
 LIB_ROOT = File.expand_path(File.dirname(__FILE__))
 
+require 'bundler'
+Bundler.setup :default
+
 task :default => [:whitespace, :jshint, :clean, :dist]
 
 desc "Clean the distribution directory."
@@ -24,17 +27,7 @@ task :whitespace do
 end
 
 def uglifyjs(src, target)
-  begin
-    require 'uglifier'
-  rescue LoadError => e
-    if verbose
-      puts "\nYou'll need the 'uglifier' gem for minification. Just run:\n\n"
-      puts "  $ gem install uglifier"
-      puts "\nand you should be all set.\n\n"
-      exit
-    end
-    return false
-  end
+  require 'uglifier'
   puts "Minifying #{src} with UglifyJS..."
   File.open(target, "w"){|f| f.puts Uglifier.new.compile(File.read(src))}
 end
@@ -89,7 +82,7 @@ desc "Compile coffee-script"
 task :coffee do
   require "coffee-script"
   src, target = File.join(LIB_ROOT, LIB_NAME + ".coffee"), File.join(LIB_ROOT, LIB_NAME + ".js")
-  File.open(target, 'w') do |f| 
+  File.open(target, 'w') do |f|
     f.write(CoffeeScript.compile(File.read(src)))
   end
 end
