@@ -5,7 +5,7 @@
  *  License: 
  */
 
-// the semi-colon before function invocation is a safety net against concatenated 
+// the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
 ;(function ( $, window, undefined ) {
     
@@ -29,7 +29,7 @@
     function Plugin( element, options ) {
         this.element = element;
 
-        // jQuery has an extend method which merges the contents of two or 
+        // jQuery has an extend method which merges the contents of two or
         // more objects, storing the result in the first object. The first object
         // is generally empty as we don't want to alter the default options for
         // future instances of the plugin
@@ -43,11 +43,11 @@
 
     Plugin.prototype.init = function () {
         // Place initialization logic here
-        // You already have access to the DOM element and the options via the instance, 
+        // You already have access to the DOM element and the options via the instance,
         // e.g., this.element and this.options
     };
 
-    // A really lightweight plugin wrapper around the constructor, 
+    // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations
     $.fn[pluginName] = function ( options ) {
         return this.each(function () {
