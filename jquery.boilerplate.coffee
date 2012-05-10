@@ -34,7 +34,7 @@
     init: ->
       # Place initialization logic here
       # You already have access to the DOM element and the options via the instance,
-      # e.g., this.element and this.options
+      # e.g., @element and @options
 
   # A really lightweight plugin wrapper around the constructor,
   # preventing against multiple instantiations
