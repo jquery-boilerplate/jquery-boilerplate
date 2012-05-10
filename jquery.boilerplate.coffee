@@ -3,9 +3,6 @@
 #  Author:
 #  License:
 
-# the semi-colon before function invocation is a safety net against concatenated
-# scripts and/or other plugins which may not be closed properly.
-
 # Note that when compiling with coffeescript, the plugin is wrapped in another
 # anonymous function. We do not need to pass in undefined as well, since
 # coffeescript uses (void 0) instead.
