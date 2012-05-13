@@ -3,19 +3,17 @@
 #  Author:
 #  License:
 
-# the semi-colon before function invocation is a safety net against concatenated
-# scripts and/or other plugins which may not be closed properly.
-``
 # Note that when compiling with coffeescript, the plugin is wrapped in another
 # anonymous function. We do not need to pass in undefined as well, since
 # coffeescript uses (void 0) instead.
-(($, window, document) ->
-  # window and document are passed through as local variables rather than globals
+(($, window) ->
+  # window is passed through as local variable rather than global
   # as this (slightly) quickens the resolution process and can be more efficiently
   # minified (especially when both are regularly referenced in your plugin).
 
   # Create the defaults once
   pluginName = 'defaultPluginName'
+  document = window.document
   defaults =
     property: 'value'
 
@@ -36,7 +34,7 @@
     init: ->
       # Place initialization logic here
       # You already have access to the DOM element and the options via the instance,
-      # e.g., this.element and this.options
+      # e.g., @element and @options
 
   # A really lightweight plugin wrapper around the constructor, 
   # preventing against multiple instantiations and allowing any
@@ -47,10 +45,10 @@
     if options is undefined or typeof options is 'object'
       this.each ->
         if !$.data(this, "plugin_#{pluginName}")
-          $.data(this, "plugin_#{pluginName}", new Plugin(this, options))
+          $.data(@, "plugin_#{pluginName}", new Plugin(@, options))
     else if typeof options is 'string' and options[0] isnt '_' and options isnt 'init'
       this.each ->
         instance = $.data(this, "plugin_#{pluginName}")
         if instance instanceof Plugin and typeof instance[options] is 'function'
           instance[options].apply( instance, args)
-)(jQuery, window, document)
+)(jQuery, window)
