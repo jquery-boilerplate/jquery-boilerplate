@@ -49,6 +49,11 @@
     else if typeof options is 'string' and options[0] isnt '_' and options isnt 'init'
       this.each ->
         instance = $.data(this, "plugin_#{pluginName}")
+        
         if instance instanceof Plugin and typeof instance[options] is 'function'
           instance[options].apply( instance, args)
+        
+        # Allow instances to be destroyed via the 'destroy' method
+        if options is 'destroy'
+          $.data(this, "plugin_#{pluginName}", null)
 )(jQuery, window)

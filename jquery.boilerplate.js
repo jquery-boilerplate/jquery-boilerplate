@@ -63,8 +63,14 @@
         } else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
             return this.each(function () {
                 var instance = $.data(this, 'plugin_' + pluginName);
+
                 if (instance instanceof Plugin && typeof instance[options] === 'function') {
                     instance[options].apply( instance, Array.prototype.slice.call( args, 1 ) );
+                }
+								
+								// Allow instances to be destroyed via the 'destroy' method
+                if (options === 'destroy') {
+                  $.data(this, 'plugin_' + pluginName, null);
                 }
             });
         }
