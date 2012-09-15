@@ -7,7 +7,7 @@ This project won't seek to provide a perfect solution to every possible pattern,
 
 ## Build system (Grunt)
 
-We use [grunt](https://github.com/cowboy/grunt) to build jQuery Boilerplate. To run it locally, use `./grunt` in the root directory.
+We use [grunt](https://github.com/cowboy/grunt) to build jQuery Boilerplate. To run it locally, use `./buid/grunt` in the root directory.
 
 ## Have you created a plugin from our boilerplate?
 Let us know [here](https://github.com/zenorocha/jquery-boilerplate/wiki/Sites)! It’s interesting to see what features others have come up with.
