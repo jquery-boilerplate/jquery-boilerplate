@@ -1,0 +1,7 @@
+{
+    "name": "jquery-boilerplate",
+    "version": "3.0.0",
+    "dependencies": {
+        "grunt": "latest"
+    }
+}
