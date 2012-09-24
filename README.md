@@ -7,7 +7,7 @@ This project won't seek to provide a perfect solution to every possible pattern,
 
 ## Build system (Grunt)
 
-We use [grunt](https://github.com/cowboy/grunt) and `make` to build jQuery Boilerplate. To run it, use `make build` in the root directory.
+We use [grunt](https://github.com/cowboy/grunt) to build jQuery Boilerplate. To run it, use `make build` in the root directory.
 
 ## Tests
 
