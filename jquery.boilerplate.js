@@ -1,60 +1,57 @@
-/*
- *  Project: 
- *  Description: 
- *  Author: 
- *  License: 
+/**
+ * @name : Plugin Name
+ * @description : Plugin description
+ * @author : Author Name
+ * @licence : http://localhost/plugin/licence
+ * @version : 1 beta
+ * @required : jQuery 1.4+
  */
+(function($, window) {
 
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
-;(function ( $, window, undefined ) {
-    
-    // undefined is used here as the undefined global variable in ECMAScript 3 is
-    // mutable (ie. it can be changed by someone else). undefined isn't really being
-    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-    // can no longer be modified.
-    
-    // window is passed through as local variable rather than global
-    // as this (slightly) quickens the resolution process and can be more efficiently
-    // minified (especially when both are regularly referenced in your plugin).
+	// A váriavel local $ recebe jQuery para evitar conflitos com outras bibliotecas
+	// window passa a ser variável local para melhor desempenho
 
-    // Create the defaults once
-    var pluginName = 'defaultPluginName',
-        document = window.document,
-        defaults = {
-            propertyName: "value"
-        };
+	var
+		// Adota document como variável local para melhor desempenho
+		document = window.document,
 
-    // The actual plugin constructor
-    function Plugin( element, options ) {
-        this.element = element;
+		// Define um objeto contendo os padrões dos métodos do plugin
+		defaults = {
+			methodName : {
+				propertyName : 'value'
+			}
+		};
 
-        // jQuery has an extend method which merges the contents of two or
-        // more objects, storing the result in the first object. The first object
-        // is generally empty as we don't want to alter the default options for
-        // future instances of the plugin
-        this.options = $.extend( {}, defaults, options) ;
-        
-        this._defaults = defaults;
-        this._name = pluginName;
-        
-        this.init();
-    }
+	// Extende a biblioteca jQuery
+	$.extend({
 
-    Plugin.prototype.init = function () {
-        // Place initialization logic here
-        // You already have access to the DOM element and the options via the instance,
-        // e.g., this.element and this.options
-    };
+		// Cria um método para alterar os valores padrões do plugin
+		// Sintaxe de uso: jQuery.methodName(options);
+		methodNameSetup : function(options) {
 
-    // A really lightweight plugin wrapper around the constructor,
-    // preventing against multiple instantiations
-    $.fn[pluginName] = function ( options ) {
-        return this.each(function () {
-            if (!$.data(this, 'plugin_' + pluginName)) {
-                $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
-            }
-        });
-    };
+			// Retorna o próprio objeto modificado
+			return defaults.methodName = $.isPlainObject(options) && !$.isEmptyObject(options) ? $.extend(defaults.methodName, options) : defaults.methodName;
+		},
 
-}(jQuery, window));
+		// Cria um objeto para guardar informações sobre o plugin (Neste caso a versão atual)
+		methodNameInfo : {
+			version : '1b'
+		}
+	}).fn.extend({
+
+		// Cria um método do plugin
+		methodName : function(options) {
+
+			// Recebe os parâmetros passados pelo usuário em um objeto sobrepondo as propriedades padrões caso redeclaradas
+			options = $.isPlainObject(options) && !$.isEmptyObject(options) ? $.extend(defaults.methodName, options) : defaults.methodName;
+
+			// Retorna o próprio elemento encapsulado para proporcionar encadeamento
+			return $(this).each(function() {
+
+				// Corpo do plugin
+				// O contexto atual (this) é o próprio elemento encapsulado percorrido atualmente
+				// Sintaxe de uso: jQuery(fn).methodName(options);
+			});
+		}
+	});
+})(jQuery, window);
