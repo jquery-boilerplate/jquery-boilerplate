@@ -8,42 +8,44 @@
  */
 ;(function($, window) {
 
-    var
-        // Adota document como variável local para melhor desempenho
-        document = window.document,
+	var
+		// Adota document como variável local para melhor desempenho
+		document = window.document,
 
-        // Define um objeto contendo os padrões dos métodos do plugin
-        defaults = {
-            methodName : {
-                propertyName : 'value'
-            }
-        };
+		// Define um objeto contendo os padrões dos métodos do plugin
+		defaults = {
+			methodName : {
+				propertyName : 'value'
+			}
+		},
 
-    $.extend({
+		fnExtend = {
 
-        // Cria um método para alterar os valores padrões do plugin
-        methodNameSetup : function(options) {
+			// Cria um método do plugin
+			methodName : function(options) {
 
-            return defaults.methodName = $.isPlainObject(options) && !$.isEmptyObject(options) ? $.extend(defaults.methodName, options) : defaults.methodName;
-        },
+				options = $.isPlainObject(options) && !$.isEmptyObject(options) ? $.extend(defaults.methodName, options) : defaults.methodName;
 
-        // Cria um objeto para guardar informações sobre o plugin (Neste caso a versão atual)
-        methodNameInfo : {
-            version : '1b'
-        }
-    });
+				return $(this).each(function() {
 
-    $.fn.extend({
+					//
+				});
+			}
+		},
 
-        // Cria um método do plugin
-        methodName : function(options) {
+		extend = {
 
-            options = $.isPlainObject(options) && !$.isEmptyObject(options) ? $.extend(defaults.methodName, options) : defaults.methodName;
+			// Cria um método para alterar os valores padrões do plugin
+			methodNameSetup : function(options) {
 
-            return $(this).each(function() {
+				return defaults.methodName = $.isPlainObject(options) && !$.isEmptyObject(options) ? $.extend(defaults.methodName, options) : defaults.methodName;
+			},
 
-                //
-            });
-        }
-    });
+			// Cria um objeto para guardar informações sobre o plugin (Neste caso a versão atual)
+			methodNameInfo : {
+				version : '1b'
+			}
+		};
+
+	$.extend(extend).fn.extend(fnExtend);
 })(jQuery, window);
