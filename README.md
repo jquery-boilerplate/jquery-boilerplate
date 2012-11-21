@@ -12,7 +12,7 @@ Have you got in this repo and still not sure about using this boilerplate?
 
 Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
 
-[This guide](https://github.com/zenorocha/jquery-boilerplate/wiki/How-did-we-get-here%3F), adapted from jQuery Plugins/Authoring, will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.
+[This awesome guide](https://github.com/zenorocha/jquery-boilerplate/wiki/How-did-we-get-here%3F), adapted from [jQuery Plugins/Authoring](http://docs.jquery.com/Plugins/Authoring), will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.
 
 ## Have you created a plugin from our boilerplate?
 
