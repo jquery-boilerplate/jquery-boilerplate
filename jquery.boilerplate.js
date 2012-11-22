@@ -23,7 +23,14 @@
         document = window.document,
         defaults = {
             propertyName: "value"
-        };
+        },
+        myLogic = {
+            init : function () {
+                // Place initialization logic here
+                // You already have access to the DOM element and the options via the instance,
+                // e.g., this.element and this.options
+            }
+        }
 
     // The actual plugin constructor
     function Plugin( element, options ) {
@@ -41,11 +48,7 @@
         this.init();
     }
 
-    Plugin.prototype.init = function () {
-        // Place initialization logic here
-        // You already have access to the DOM element and the options via the instance,
-        // e.g., this.element and this.options
-    };
+    Plugin.prototype = myLogic;
 
     // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations
