@@ -6,16 +6,16 @@
 # Note that when compiling with coffeescript, the plugin is wrapped in another
 # anonymous function. We do not need to pass in undefined as well, since
 # coffeescript uses (void 0) instead.
-(($, window) ->
-  # window is passed through as local variable rather than global
+(($, window, document) ->
+
+  # window and document are passed through as local variable rather than global
   # as this (slightly) quickens the resolution process and can be more efficiently
   # minified (especially when both are regularly referenced in your plugin).
 
   # Create the defaults once
-  pluginName = 'defaultPluginName'
-  document = window.document
+  pluginName = "defaultPluginName"
   defaults =
-    property: 'value'
+    property: "value"
 
   # The actual plugin constructor
   class Plugin
@@ -36,10 +36,14 @@
       # You already have access to the DOM element and the options via the instance,
       # e.g., @element and @options
 
+    yourOtherFunction: ->
+      # some logic
+
   # A really lightweight plugin wrapper around the constructor,
   # preventing against multiple instantiations
   $.fn[pluginName] = (options) ->
     @each ->
       if !$.data(this, "plugin_#{pluginName}")
         $.data(@, "plugin_#{pluginName}", new Plugin(@, options))
-)(jQuery, window)
+
+)( jQuery, window, document )
