@@ -47,14 +47,33 @@
         // e.g., this.element and this.options
     };
 
-    // A really lightweight plugin wrapper around the constructor,
-    // preventing against multiple instantiations
+    // A really lightweight plugin wrapper around the constructor, 
+    // preventing against multiple instantiations and allowing any
+    // public function (ie. a function whose name doesn't start
+    // with an underscore) to be called via the jQuery plugin,
+    // e.g. $(element).defaultPluginName('functionName', arg1, arg2)
     $.fn[pluginName] = function ( options ) {
-        return this.each(function () {
-            if (!$.data(this, 'plugin_' + pluginName)) {
-                $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
-            }
-        });
-    };
+        var args = arguments;
+        if (options === undefined || typeof options === 'object') {
+            return this.each(function () {
+                if (!$.data(this, 'plugin_' + pluginName)) {
+                    $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
+                }
+            });
+        } else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
+            return this.each(function () {
+                var instance = $.data(this, 'plugin_' + pluginName);
+
+                if (instance instanceof Plugin && typeof instance[options] === 'function') {
+                    instance[options].apply( instance, Array.prototype.slice.call( args, 1 ) );
+                }
+								
+								// Allow instances to be destroyed via the 'destroy' method
+                if (options === 'destroy') {
+                  $.data(this, 'plugin_' + pluginName, null);
+                }
+            });
+        }
+    }
 
 }(jQuery, window));
