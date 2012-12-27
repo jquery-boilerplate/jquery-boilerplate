@@ -7,7 +7,18 @@
 
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
-;(function ( $, window, document, undefined ) {
+// Uses AMD or browser globals to create a jQuery plugin.
+;(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], function ($) {
+            factory($, window, document);
+        });
+    } else {
+        // Browser globals
+        factory(jQuery, window, document);
+    }
+}(function ( $, window, document, undefined ) {
 
     // undefined is used here as the undefined global variable in ECMAScript 3 is
     // mutable (ie. it can be changed by someone else). undefined isn't really being
@@ -65,5 +76,4 @@
             }
         });
     };
-
-})( jQuery, window, document );
+}));
