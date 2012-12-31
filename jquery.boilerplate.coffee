@@ -25,10 +25,8 @@
       # is generally empty as we don't want to alter the default options for
       # future instances of the plugin
       @options = $.extend {}, defaults, options
-
       @_defaults = defaults
       @_name = pluginName
-
       @init()
 
     init: ->
@@ -43,7 +41,7 @@
   # preventing against multiple instantiations
   $.fn[pluginName] = (options) ->
     @each ->
-      if !$.data(this, "plugin_#{pluginName}")
+      if !$.data(@, "plugin_#{pluginName}")
         $.data(@, "plugin_#{pluginName}", new Plugin(@, options))
 
-)( jQuery, window, document )
+)(jQuery, window, document)
