@@ -46,7 +46,7 @@
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.options).
         },
-        yourOtherFunction: function (element, options) {
+        yourOtherFunction: function () {
             // some logic
         }
     };
