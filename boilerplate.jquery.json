@@ -1,0 +1,40 @@
+{
+  "name": "boilerplate",
+  "title": "jQuery Boilerplate",
+  "description": "A jump-start for jQuery plugins development.",
+  "keywords": [
+    "jquery",
+    "boilerplate",
+    "plugins"
+  ],
+  "version": "3.2.0",
+  "author": {
+    "name": "Zeno Rocha",
+    "url": "https://github.com/zenorocha"
+  },
+  "maintainers": [
+    {
+      "name": "Zeno Rocha",
+      "email": "zno.rocha@gmail.com",
+      "url": "https://github.com/zenorocha"
+    },
+    {
+      "name": "Addy Osmani",
+      "email": "addyo@google.com",
+      "url": "https://github.com/addyosmani"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/jquery-boilerplate/boilerplate/issues",
+  "homepage": "http://jqueryboilerplate.com",
+  "docs": "https://github.com/jquery-boilerplate/boilerplate#readme",
+  "download": "https://github.com/jquery-boilerplate/boilerplate/archive/master.zip",
+  "dependencies": {
+    "jquery": ">=1.4"
+  }
+}
