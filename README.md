@@ -14,6 +14,11 @@ Well, extending jQuery with plugins and methods is very powerful and can save yo
 
 [This awesome guide](https://github.com/jquery-boilerplate/boilerplate/wiki/How-did-we-get-here%3F), adapted from [jQuery Plugins/Authoring](http://docs.jquery.com/Plugins/Authoring), will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.
 
+## jQuery Plugin Registry (plugins.jquery.com)
+
+Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](https://github.com/jquery-boilerplate/boilerplate/wiki/How-to-publish-a-plugin-in-jQuery-Plugin-Registry
+)!
+
 ## Have you created a plugin from our boilerplate?
 
 [Let us know!](https://github.com/jquery-boilerplate/boilerplate/wiki/Sites) It’s interesting to see what features others have come up with.
