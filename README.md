@@ -10,9 +10,7 @@ Este projeto não procura prover a solução perfeita para todo o tipo de padrã
 
 Você chegou nesse repositório e ainda não tem certeza se deve usar esse boilerplate?
 
-Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
-
-Bem, ampliar a capacidade do jQuery com plugins e métodos é muito útil e pode economizar uma boa quantidade do seu tempo e dos membros da sua equipe. Você pode abstrair as funções mais úteis dentro de plugins.
+Bem, ampliar a capacidade do jQuery com plugins e métodos é muito útil e pode economizar uma boa quantidade do seu tempo e dos membros da sua equipe. Através de plugins você pode abstrair as funções mais utilizadas do seu código.
 
 [Esse guia incrível](https://github.com/jquery-boilerplate/boilerplate/wiki/How-did-we-get-here%3F), adaptado desse [aqui](http://docs.jquery.com/Plugins/Authoring) (em inglês), vai apresentar o básico: as melhores práticas e os problemas comuns a se evitar quando você começa a escrever o seu plugin.
 
