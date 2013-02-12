@@ -1,44 +1,45 @@
-#  Project:
-#  Description:
-#  Author:
-#  License:
+#  Projeto:
+#  Descrição:
+#  Autor:
+#  Licença:
 
-# Note that when compiling with coffeescript, the plugin is wrapped in another
-# anonymous function. We do not need to pass in undefined as well, since
-# coffeescript uses (void 0) instead.
+# Note que quando compilado com CoffeeScript, o plugin é envolto em outra
+# função anônima. Não precisamos passar undefined também, graças
+# ao CoffeeScript usar (void 0) no lugar.
+
 (($, window, document) ->
 
-  # window and document are passed through as local variable rather than global
-  # as this (slightly) quickens the resolution process and can be more efficiently
-  # minified (especially when both are regularly referenced in your plugin).
+  # window e document são passadas através de variável local em vez de global,
+  # isso melhora o processo de resolução e pode ser mais eficiente quando o
+  # código é minificado (especialmente quando são muito utilizdas no seu plugin).
 
-  # Create the defaults once
+  # Cria os defaults somente uma vez
   pluginName = "defaultPluginName"
   defaults =
     property: "value"
 
-  # The actual plugin constructor
+  # O construtor do plugin
   class Plugin
     constructor: (@element, options) ->
-      # jQuery has an extend method which merges the contents of two or
-      # more objects, storing the result in the first object. The first object
-      # is generally empty as we don't want to alter the default options for
-      # future instances of the plugin
+      # O jQuery tem um método chamado extend que junta os conteúdos de dois ou
+      # mais objetos, guardando o resultado no primeiro objeto. O primeiro objeto
+      # geralmente é vazio pois não queremos alterar as opções default para as
+      # futuras instâncias do plugin.
       @options = $.extend {}, defaults, options
       @_defaults = defaults
       @_name = pluginName
       @init()
 
     init: ->
-      # Place initialization logic here
-      # You already have access to the DOM element and the options via the instance,
-      # e.g., @element and @options
+      # Coloque sua lógica de inicialização aqui.
+      # Você já possui acesso ao elemento do DOM e às opções da instância,
+      # e.g., @element e @options
 
-    yourOtherFunction: ->
-      # some logic
+    suaOutraFuncao: ->
+      # Alguma lógica
 
-  # A really lightweight plugin wrapper around the constructor,
-  # preventing against multiple instantiations
+  # Um encapsulamento muito leve entorno do construtor,
+  # prevenindo contra múltiplas instanciações.
   $.fn[pluginName] = (options) ->
     @each ->
       if !$.data(@, "plugin_#{pluginName}")

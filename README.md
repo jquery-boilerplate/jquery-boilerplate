@@ -1,24 +1,24 @@
 # jQuery Boilerplate
 
-### A boilerplate for jump-starting jQuery plugins development.
+### Um boilerplate para acelerar o desenvolvimento de plugins jQuery.
 
-So, you've tried your hand at writing jQuery plugins and you're comfortable putting together something that probably works. Awesome! Thing is, you think there might be better ways you could be writing them - you've seen them done a number of different ways in the wild, but aren't really sure what the differences between these patterns are or how to get started with them.
+Então você se arriscou a escrever alguns plugins jQuery e está confortável em fazer algo que provavelmente funciona. Muito bom! Acontece que você acha que devem existir maneiras melhores de escrevê-los - você já viu muitas maneiras diferentes por aí, mas não tem certeza de qual a diferença entre elas ou como começar a trabalhar com as mesmas.
 
-This project won't seek to provide a perfect solution to every possible pattern, but will attempt to cover a simple template for beginners and above. By using a basic defaults object, simple constructor for assigning the element to work with and extending options with defaults and a lightweight wrapper around the constructor to avoid issues with multiple instantiations.
+Este projeto não procura prover a solução perfeita para todo o tipo de padrão, mas tenta construir um template simples tanto para iniciantes quanto para experientes. Utilizando um simples objeto defaults, um construtor simples para indicar o objeto com o qual se trabalha, a substituição das opções pelos defaults e um wrapper leve em volta do construtor para evitar problemas com múltiplas instâncias do objeto.
 
-## How did we get here?
+## Como chegamos aqui?
 
-Have you got in this repo and still not sure about using this boilerplate?
+Você chegou nesse repositório e ainda não tem certeza se deve usar esse boilerplate?
 
-Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
+Bem, ampliar a capacidade do jQuery com plugins e métodos é muito útil e pode economizar uma boa quantidade do seu tempo e dos membros da sua equipe. Através de plugins você pode abstrair as funções mais utilizadas do seu código.
 
-[This awesome guide](https://github.com/jquery-boilerplate/boilerplate/wiki/How-did-we-get-here%3F), adapted from [jQuery Plugins/Authoring](http://docs.jquery.com/Plugins/Authoring), will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.
+[Esse guia incrível](https://github.com/jquery-boilerplate/boilerplate/wiki/How-did-we-get-here%3F), adaptado desse [aqui](http://docs.jquery.com/Plugins/Authoring) (em inglês), vai apresentar o básico: as melhores práticas e os problemas comuns a se evitar quando você começa a escrever o seu plugin.
 
-## jQuery Plugin Registry (plugins.jquery.com)
+## Registro oficial de plugins jQuery (plugins.jquery.com)
 
-Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](https://github.com/jquery-boilerplate/boilerplate/wiki/How-to-publish-a-plugin-in-jQuery-Plugin-Registry
+Além disso, dê uma olhada no nosso guia em inglês sobre [Como publicar um plugin no registro oficial de plguins jQuery](https://github.com/jquery-boilerplate/boilerplate/wiki/How-to-publish-a-plugin-in-jQuery-Plugin-Registry
 )!
 
-## Have you created a plugin from our boilerplate?
+## Você criou um plugin a partir do nosso boilerplate?
 
-[Let us know!](https://github.com/jquery-boilerplate/boilerplate/wiki/Sites) It’s interesting to see what features others have come up with.
+[Informe a gente!](https://github.com/jquery-boilerplate/boilerplate/wiki/Sites) É interessante ver o que a comunidade pode fazer.
