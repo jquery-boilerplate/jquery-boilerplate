@@ -8,6 +8,10 @@
 # coffeescript uses (void 0) instead.
 (($, window, document) ->
 
+  // The strict context prevents certain actions
+  // from being taken and throws more exceptions.
+  "use strict";
+
   # window and document are passed through as local variable rather than global
   # as this (slightly) quickens the resolution process and can be more efficiently
   # minified (especially when both are regularly referenced in your plugin).
