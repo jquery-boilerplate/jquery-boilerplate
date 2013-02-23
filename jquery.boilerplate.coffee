@@ -1,7 +1,7 @@
-#  Project:
-#  Description:
-#  Author:
-#  License:
+#  @name
+#  @desc
+#  @author
+#  @license
 
 # Note that when compiling with coffeescript, the plugin is wrapped in another
 # anonymous function. We do not need to pass in undefined as well, since

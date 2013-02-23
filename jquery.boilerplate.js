@@ -1,8 +1,8 @@
 /*
- *  Project:
- *  Description:
- *  Author:
- *  License:
+ *  @name
+ *  @desc
+ *  @author
+ *  @license
  */
 
 // the semi-colon before function invocation is a safety net against concatenated
