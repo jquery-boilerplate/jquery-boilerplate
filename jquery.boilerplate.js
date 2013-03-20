@@ -62,7 +62,7 @@
         return this.each(function () {
             var _plugin = "plugin_" + pluginName,
                 data = $.data(this, _plugin),
-                method = data[options];
+                method = data ? data[options] : '';
 
             // Instance the plugin
             if (!data) {
