@@ -46,7 +46,10 @@
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.options).
         },
-        yourOtherFunction: function () {
+        yourPublicFunction: function () {
+            // some logic
+        },
+        _yourPrivateFunction: function () {
             // some logic
         }
     };
@@ -55,8 +58,21 @@
     // preventing against multiple instantiations
     $.fn[pluginName] = function (options) {
         return this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+            var _plugin = "plugin_" + pluginName,
+                data = $.data(this, _plugin);
+
+            // instance the plugin
+            if (!data) {
+                $.data(this, _plugin, (data = new Plugin(this, options)));
+
+            // run specific method with arguments
+            } else if (data[options]) {
+                data[options].apply(data, [].slice.call(arguments, 1));
+
+            // get the error if the method does not exist or is private
+            // private methods are prefixed by _
+            } else if (!data[options] || options.charAt(0) == '_') {
+                $.error('Method ' + options + ' does not exist on jQuery.' + _plugin);
             }
         });
     };
