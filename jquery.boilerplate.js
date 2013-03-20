@@ -46,7 +46,10 @@
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.options).
         },
-        yourOtherFunction: function () {
+        yourPublicFunction: function () {
+            // some logic
+        },
+        _yourPrivateFunction: function () {
             // some logic
         }
     };
@@ -54,9 +57,31 @@
     // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations
     $.fn[pluginName] = function (options) {
+        var args = arguments;
+
         return this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+            var _plugin = "plugin_" + pluginName,
+                data = $.data(this, _plugin),
+                method = data ? data[options] : '';
+
+            // Instance the plugin
+            if (!data) {
+                $.data(this, _plugin, (data = new Plugin(this, options)));
+
+            // Tests that there's already a plugin-instance
+            // and checks that the requested public method exists
+            // performs a method passing parameters if necessary
+            } else if (data instanceof Plugin && typeof method === 'function') {
+                method.apply(data, Array.prototype.slice.call(args, 1));
+
+                // Allow instances to be destroyed via the 'destroy' method
+                if (options === 'destroy') {
+                    $.data(this, _plugin, null);
+                }
+
+            // Get the error if the method does not exist or is private
+            } else if (!method || options.charAt(0) === '_') {
+                $.error('Method ' + options + ' does not exist on jQuery.' + pluginName);
             }
         });
     };
