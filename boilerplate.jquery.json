@@ -10,6 +10,7 @@
 	"version": "3.3.0",
 	"author": {
 		"name": "Zeno Rocha",
+		"email": "zno.rocha@gmail.com",
 		"url": "https://github.com/zenorocha"
 	},
 	"maintainers": [
@@ -20,13 +21,14 @@
 		},
 		{
 			"name": "Addy Osmani",
+			"email": "addyosmani@gmail.com",
 			"url": "https://github.com/addyosmani"
 		}
 	],
 	"licenses": [
 		{
 			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
+			"url": "http://zenorocha.mit-license.org/"
 		}
 	],
 	"bugs": "https://github.com/jquery-boilerplate/boilerplate/issues",
