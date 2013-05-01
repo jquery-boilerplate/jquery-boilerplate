@@ -1,4 +1,4 @@
-# jQuery Boilerplate
+# jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/boilerplate.png?branch=master)](https://travis-ci.org/jquery-boilerplate/boilerplate)
 
 ### A boilerplate for jump-starting jQuery plugins development.
 
