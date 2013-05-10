@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: ['src/jquery.boilerplate.js'],
-				dest: 'build/jquery.boilerplate.js'
+				dest: 'dist/jquery.boilerplate.js'
 			},
 			options: {
 				banner: '<%= meta.banner %>'
@@ -39,8 +39,8 @@ module.exports = function(grunt) {
 		// Minify definitions
 		uglify: {
 			my_target: {
-				src: ['build/jquery.boilerplate.js'],
-				dest: 'build/jquery.boilerplate.min.js'
+				src: ['dist/jquery.boilerplate.js'],
+				dest: 'dist/jquery.boilerplate.min.js'
 			},
 			options: {
 				banner: '<%= meta.banner %>'
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 		coffee: {
 			compile: {
 				files: {
-					'build/jquery.boilerplate.js': 'src/jquery.boilerplate.coffee'
+					'dist/jquery.boilerplate.js': 'src/jquery.boilerplate.coffee'
 				}
 			}
 		}
