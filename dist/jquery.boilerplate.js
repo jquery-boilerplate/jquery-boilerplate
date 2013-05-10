@@ -1,5 +1,5 @@
 /*
- *  jQuery Boilerplate - v3.3.0
+ *  jQuery Boilerplate - v3.3.1
  *  A jump-start for jQuery plugins development.
  *  http://jqueryboilerplate.com
  *
@@ -46,6 +46,7 @@
 						// and this.options
 						// you can add more functions like the one below and
 						// call them like so: this.yourOtherFunction(this.element, this.options).
+						console.log("xD");
 				},
 				yourOtherFunction: function () {
 						// some logic

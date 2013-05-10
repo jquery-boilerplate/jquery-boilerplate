@@ -4,7 +4,7 @@
 	"description": "A jump-start for jQuery plugins development.",
 	"author": "Zeno Rocha",
 	"homepage": "https://github.com/jquery-boilerplate/boilerplate/",
-	"version": "3.3.0",
+	"version": "3.3.1",
 	"devDependencies": {
 		"grunt": "~0.4.1",
 		"grunt-cli": "~0.1.7",
