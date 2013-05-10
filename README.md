@@ -27,7 +27,9 @@ The basic structure of the project is given in the following way:
 
 <pre>
 .
-|-- build/
+|-- demo/
+|   |-- index.html
+|-- dist/
 |   |-- jquery.boilerplate.js
 |   |-- jquery.boilerplate.min.js
 |-- src/
@@ -43,7 +45,11 @@ The basic structure of the project is given in the following way:
 
 </pre>
 
-#### [build/](https://github.com/jquery-boilerplate/boilerplate/tree/master/build)
+#### [demo/](https://github.com/jquery-boilerplate/boilerplate/tree/master/demo)
+
+Contains a simple HTML file to demonstrate your plugin.
+
+#### [dist/](https://github.com/jquery-boilerplate/boilerplate/tree/master/dist)
 
 This is where the generated files are stored once Grunt runs.
 
