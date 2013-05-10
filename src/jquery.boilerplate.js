@@ -38,6 +38,7 @@
 						// and this.options
 						// you can add more functions like the one below and
 						// call them like so: this.yourOtherFunction(this.element, this.options).
+						console.log("xD");
 				},
 				yourOtherFunction: function () {
 						// some logic

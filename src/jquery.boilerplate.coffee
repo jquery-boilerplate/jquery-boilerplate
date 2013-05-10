@@ -28,6 +28,7 @@ do ($ = jQuery, window, document) ->
 			# Place initialization logic here
 			# You already have access to the DOM element and the options via the instance,
 			# e.g., @element and @options
+			console.log("xD")
 
 		yourOtherFunction: ->
 			# some logic
