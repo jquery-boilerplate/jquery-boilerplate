@@ -81,7 +81,7 @@ Definitions for continous integration using Travis.
 
 > Check [travis-ci.org](http://about.travis-ci.org/) if you haven't heard about this project yet.
 
-#### [.boilerplate.jquery.json](https://github.com/jquery-boilerplate/boilerplate/tree/master/.boilerplate.jquery.json)
+#### [boilerplate.jquery.json](https://github.com/jquery-boilerplate/boilerplate/tree/master/boilerplate.jquery.json)
 
 Package manifest file used to publish plugins in jQuery Plugin Registry.
 
@@ -101,7 +101,7 @@ Specify all dependencies loaded via Node.JS.
 
 ## Team
 
-jQuery Boilerplate was made with love by these people and a bunch of awesome [contributors](https://github.com/jquery-boilerplate/boilerplate/graphs/contributors).
+jQuery Boilerplate was made with love by these guys and a bunch of awesome [contributors](https://github.com/jquery-boilerplate/boilerplate/graphs/contributors).
 
 [![Zeno Rocha](http://gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93?s=70)](http://zenorocha.com) | [![Addy Osmani](http://gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275?s=70)](http://addyosmani.com)
 --- | --- | --- | --- | --- | --- | ---
