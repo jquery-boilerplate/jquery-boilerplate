@@ -114,6 +114,13 @@ Before sending a pull request remember to follow [jQuery Core Style Guide](http:
 
 [Let us know!](https://github.com/jquery-boilerplate/boilerplate/wiki/Sites) It’s interesting to see what features others have come up with.
 
+## Team
+
+jQuery Boilerplate was made with love by these people and a bunch of awesome [contributors](https://github.com/jquery-boilerplate/boilerplate/graphs/contributors).
+
+[![Zeno Rocha](http://gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93?s=70)](http://paulirish.com) | [![Addy Osmani](http://gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275?s=70)](http://addyosmani.com)
+--- | --- | --- | --- | --- | --- | ---
+[Zeno Rocha](http://zenorocha.com) | [Addy Osmani](http://addyosmani.com)
 
 ## History
 
