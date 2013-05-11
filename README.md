@@ -1,6 +1,6 @@
 # jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/boilerplate.png?branch=master)](https://travis-ci.org/jquery-boilerplate/boilerplate)
 
-### A boilerplate for jump-starting jQuery plugins development.
+### A jump-start for jQuery plugins development
 
 So, you've tried your hand at writing jQuery plugins and you're comfortable putting together something that probably works. Awesome! Thing is, you think there might be better ways you could be writing them - you've seen them done a number of different ways in the wild, but aren't really sure what the differences between these patterns are or how to get started with them.
 
@@ -25,7 +25,7 @@ Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](htt
 
 The basic structure of the project is given in the following way:
 
-<pre>
+```
 .
 |-- demo/
 |   |-- index.html
@@ -42,8 +42,7 @@ The basic structure of the project is given in the following way:
 |-- boilerplate.jquery.json
 |-- Gruntfile.js
 `-- package.json
-
-</pre>
+```
 
 #### [demo/](https://github.com/jquery-boilerplate/boilerplate/tree/master/demo)
 
