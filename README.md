@@ -8,47 +8,46 @@ This project won't seek to provide a perfect solution to every possible pattern,
 
 ## Usage
 
-1. Include jQuery.
+1. Include jQuery:
 
-```html
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-```
+	```html
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	```
 
-2. Include plugin's JS.
+2. Include plugin's code:
 
-```html
-<script src="dist/jquery.boilerplate.min.js"></script>
-```
+	```html
+	<script src="dist/jquery.boilerplate.min.js"></script>
+	```
 
-3. Call the plugin
+3. Call the plugin:
 
-```javascript
-$("#element").defaultPluginName({
-	propertyName: "a custom value"
-});
-```
+	```javascript
+	$("#element").defaultPluginName({
+		propertyName: "a custom value"
+	});
+	```
 
 ## Structure
 
 The basic structure of the project is given in the following way:
 
 ```
-.
-|-- demo/
-|   |-- index.html
-|-- dist/
-|   |-- jquery.boilerplate.js
-|   |-- jquery.boilerplate.min.js
-|-- src/
-|   |-- jquery.boilerplate.coffee
-|   |-- jquery.boilerplate.js
-|-- .editorconfig
-|-- .gitignore
-|-- .jshintrc
-|-- .travis.yml
-|-- boilerplate.jquery.json
-|-- Gruntfile.js
-`-- package.json
+├── demo/
+│   └── index.html
+├── dist/
+│   ├── jquery.boilerplate.js
+│   └── jquery.boilerplate.min.js
+├── src/
+│   ├── jquery.boilerplate.coffee
+│   └── jquery.boilerplate.js
+├── .editorconfig
+├── .gitignore
+├── .jshintrc
+├── .travis.yml
+├── boilerplate.jquery.json
+├── Gruntfile.js
+└── package.json
 ```
 
 #### [demo/](https://github.com/jquery-boilerplate/boilerplate/tree/master/demo)
