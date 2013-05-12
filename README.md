@@ -6,20 +6,27 @@ So, you've tried your hand at writing jQuery plugins and you're comfortable putt
 
 This project won't seek to provide a perfect solution to every possible pattern, but will attempt to cover a simple template for beginners and above. By using a basic defaults object, simple constructor for assigning the element to work with and extending options with defaults and a lightweight wrapper around the constructor to avoid issues with multiple instantiations.
 
-## Guides
+## Usage
 
-#### How did we get here?
+1. Include jQuery.
 
-Have you got in this repo and still not sure about using this boilerplate?
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+```
 
-Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
+2. Include plugin's JS.
 
-[This awesome guide](https://github.com/jquery-boilerplate/boilerplate/wiki/How-did-we-get-here%3F), adapted from [jQuery Plugins/Authoring](http://docs.jquery.com/Plugins/Authoring), will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.
+```html
+<script src="dist/jquery.boilerplate.min.js"></script>
+```
 
-#### How to publish plugins?
+3. Call the plugin
 
-Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](https://github.com/jquery-boilerplate/boilerplate/wiki/How-to-publish-a-plugin-in-jQuery-Plugin-Registry
-)!
+```javascript
+$("#element").defaultPluginName({
+	propertyName: "a custom value"
+});
+```
 
 ## Structure
 
@@ -97,6 +104,21 @@ Contains all automated tasks using Grunt.
 Specify all dependencies loaded via Node.JS.
 
 > Check [NPM](https://npmjs.org/doc/json.html) for more details.
+
+## Guides
+
+#### How did we get here?
+
+Have you got in this repo and still not sure about using this boilerplate?
+
+Well, extending jQuery with plugins and methods is very powerful and can save you and your peers a lot of development time by abstracting your most clever functions into plugins.
+
+[This awesome guide](https://github.com/jquery-boilerplate/boilerplate/wiki/How-did-we-get-here%3F), adapted from [jQuery Plugins/Authoring](http://docs.jquery.com/Plugins/Authoring), will outline the basics, best practices, and common pitfalls to watch out for as you begin writing your plugin.
+
+#### How to publish plugins?
+
+Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](https://github.com/jquery-boilerplate/boilerplate/wiki/How-to-publish-a-plugin-in-jQuery-Plugin-Registry
+)!
 
 ## Team
 
