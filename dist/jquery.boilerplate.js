@@ -32,7 +32,7 @@
 				// more objects, storing the result in the first object. The first object
 				// is generally empty as we don't want to alter the default options for
 				// future instances of the plugin
-				this.options = $.extend( {}, defaults, options );
+				this.settings = $.extend( {}, defaults, options );
 				this._defaults = defaults;
 				this._name = pluginName;
 				this.init();
@@ -43,9 +43,9 @@
 						// Place initialization logic here
 						// You already have access to the DOM element and
 						// the options via the instance, e.g. this.element
-						// and this.options
+						// and this.settings
 						// you can add more functions like the one below and
-						// call them like so: this.yourOtherFunction(this.element, this.options).
+						// call them like so: this.yourOtherFunction(this.element, this.settings).
 						console.log("xD");
 				},
 				yourOtherFunction: function () {
