@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 				" *\n" +
 				" *  Made by <%= pkg.author.name %>\n" +
 				" *  Under <%= pkg.licenses[0].type %> License\n" +
-				" */\n"
+				" */\n;"
 		},
 
 		// Concat definitions
@@ -54,6 +54,15 @@ module.exports = function(grunt) {
 					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
 				}
 			}
+		},
+
+		// Unit testing
+		qunit : {
+			dist : {
+				options : {
+					urls : ['test/index.html']
+				}
+			}
 		}
 
 	});
@@ -62,8 +71,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-coffee");
+	grunt.loadNpmTasks("grunt-contrib-qunit");
 
-	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
+	grunt.registerTask("default", ["jshint", "concat", "uglify", "qunit"]);
 	grunt.registerTask("travis", ["jshint"]);
 
 };
