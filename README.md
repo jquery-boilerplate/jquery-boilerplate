@@ -41,6 +41,10 @@ The basic structure of the project is given in the following way:
 ├── src/
 │   ├── jquery.boilerplate.coffee
 │   └── jquery.boilerplate.js
+├── test/
+│   ├── index.html
+│   └── unit/
+│		└── test.js
 ├── .editorconfig
 ├── .gitignore
 ├── .jshintrc
