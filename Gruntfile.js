@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 				" *\n" +
 				" *  Made by <%= pkg.author.name %>\n" +
 				" *  Under <%= pkg.licenses[0].type %> License\n" +
-				" */\n;"
+				" */\n"
 		},
 
 		// Concat definitions
