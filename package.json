@@ -3,6 +3,10 @@
 	"title": "jQuery Boilerplate",
 	"description": "A jump-start for jQuery plugins development.",
 	"author": "Zeno Rocha",
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/jquery-boilerplate/boilerplate.git"
+  },
 	"homepage": "https://github.com/jquery-boilerplate/boilerplate/",
 	"version": "3.3.1",
 	"devDependencies": {
