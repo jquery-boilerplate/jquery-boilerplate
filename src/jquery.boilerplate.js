@@ -18,7 +18,7 @@
 		};
 
 		// The actual plugin constructor
-		function Plugin ( element, options ) {
+		var Plugin = function ( element, options ) {
 				this.element = element;
 				// jQuery has an extend method which merges the contents of two or
 				// more objects, storing the result in the first object. The first object
@@ -28,7 +28,7 @@
 				this._defaults = defaults;
 				this._name = pluginName;
 				this.init();
-		}
+		};
 
 		Plugin.prototype = {
 				init: function () {
