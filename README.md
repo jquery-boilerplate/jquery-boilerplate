@@ -1,4 +1,4 @@
-# jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/boilerplate.png?branch=master)](https://travis-ci.org/jquery-boilerplate/boilerplate)
+# jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/jquery-boilerplate.png?branch=master)](https://travis-ci.org/jquery-boilerplate/jquery-boilerplate)
 
 ### A jump-start for jQuery plugins development
 
@@ -133,7 +133,7 @@ Check [CONTRIBUTING.md](https://github.com/jquery-boilerplate/boilerplate/blob/m
 
 ## History
 
-Check [HISTORY.md](https://github.com/jquery-boilerplate/boilerplate/blob/master/HISTORY.md)
+Check [Release](https://github.com/jquery-boilerplate/jquery-boilerplate/releases) list.
 
 ## License
 
