@@ -27,6 +27,9 @@
 				this.settings = $.extend( {}, defaults, options );
 				this._defaults = defaults;
 				this._name = pluginName;
+				this.privateMethod = function() {
+					return false;
+				};
 				this.init();
 		}
 
@@ -37,7 +40,7 @@
 						// the options via the instance, e.g. this.element
 						// and this.settings
 						// you can add more functions like the one below and
-						// call them like so: this.yourOtherFunction(this.element, this.settings).
+						// call them like so: this.yourOtherFunction(this.element, this.settings or this.privateMethod).
 						console.log("xD");
 				},
 				yourOtherFunction: function () {
