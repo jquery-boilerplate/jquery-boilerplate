@@ -22,12 +22,15 @@ do ($ = jQuery, window, document) ->
 			@settings = $.extend {}, defaults, options
 			@_defaults = defaults
 			@_name = pluginName
+			@privateMethod = -> 
+				#You can call it using @privateMethod
+				false
 			@init()
 
 		init: ->
 			# Place initialization logic here
 			# You already have access to the DOM element and the options via the instance,
-			# e.g., @element and @settings
+			# e.g., @element and @settings or @privateMethod()
 			console.log("xD")
 
 		yourOtherFunction: ->
