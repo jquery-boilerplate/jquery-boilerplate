@@ -62,7 +62,7 @@
 						}
 				});
 
-				// chain jQuery methods
+				// chain jQuery functions
 				return this;
 		};
 
