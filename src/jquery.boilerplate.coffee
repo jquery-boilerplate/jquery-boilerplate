@@ -28,7 +28,7 @@ do ($ = jQuery, window, document) ->
 			# Place initialization logic here
 			# You already have access to the DOM element and the options via the instance,
 			# e.g., @element and @settings
-			console.log("xD")
+			console.log "xD"
 
 		yourOtherFunction: ->
 			# some logic
@@ -37,5 +37,5 @@ do ($ = jQuery, window, document) ->
 	# preventing against multiple instantiations
 	$.fn[pluginName] = (options) ->
 		@each ->
-			if !$.data(@, "plugin_#{pluginName}")
-				$.data(@, "plugin_#{pluginName}", new Plugin(@, options))
+			unless $.data @, "plugin_#{pluginName}"
+				$.data @, "plugin_#{pluginName}", new Plugin @, options
