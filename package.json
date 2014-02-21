@@ -8,7 +8,7 @@
     "url": "http://github.com/jquery-boilerplate/jquery-boilerplate.git"
   },
   "homepage": "https://github.com/jquery-boilerplate/jquery-boilerplate/",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.13",
