@@ -1,4 +1,4 @@
-# jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/jquery-boilerplate.svg?branch=master)](https://travis-ci.org/jquery-boilerplate/jquery-boilerplate)
+# jQuery Boilerplate [![Build Status](https://secure.travis-ci.org/jquery-boilerplate/jquery-boilerplate.svg?branch=master)](https://travis-ci.org/jquery-boilerplate/jquery-boilerplate) ![Bower Version](https://badge.fury.io/bo/jquery-boilerplate.svg)
 
 ### A jump-start for jQuery plugins development
 
@@ -129,12 +129,12 @@ jQuery Boilerplate was made with love by these guys and a bunch of awesome [cont
 
 ## Contributing
 
-Check [CONTRIBUTING.md](https://github.com/jquery-boilerplate/boilerplate/blob/master/CONTRIBUTING.md)
+Check [CONTRIBUTING.md](https://github.com/jquery-boilerplate/boilerplate/blob/master/CONTRIBUTING.md) for more information.
 
 ## History
 
-Check [Release](https://github.com/jquery-boilerplate/jquery-boilerplate/releases) list.
+Check [Releases](https://github.com/jquery-boilerplate/jquery-boilerplate/releases) for detailed changelog.
 
 ## License
 
-[MIT License](http://zenorocha.mit-license.org/)
+[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha
