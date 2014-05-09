@@ -1,6 +1,18 @@
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
-;(function ( $, window, document, undefined ) {
+// AMD it
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // CommonJS
+        module.exports = factory;
+    } else {
+        // Browser globals
+        factory(jQuery, window, document );
+    }
+}(function ( $, window, document, undefined ) {
 
 		// undefined is used here as the undefined global variable in ECMAScript 3 is
 		// mutable (ie. it can be changed by someone else). undefined isn't really being
@@ -58,4 +70,4 @@
 				return this;
 		};
 
-})( jQuery, window, document );
+}));
