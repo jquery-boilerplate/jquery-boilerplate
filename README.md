@@ -123,9 +123,9 @@ Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](htt
 
 jQuery Boilerplate was made with love by these guys and a bunch of awesome [contributors](https://github.com/jquery-boilerplate/boilerplate/graphs/contributors).
 
-[![Zeno Rocha](http://gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93?s=70)](http://zenorocha.com) | [![Addy Osmani](http://gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275?s=70)](http://addyosmani.com)
+[![Zeno Rocha](http://gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93?s=70)](http://zenorocha.com) | [![Addy Osmani](http://gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275?s=70)](http://addyosmani.com) | [![Helder Santana](http://gravatar.com/avatar/63fb620ee7d14fc91030d4349d189b3e?s=70)](http://heldr.com)
 --- | --- | --- | --- | --- | --- | ---
-[Zeno Rocha](http://zenorocha.com) | [Addy Osmani](http://addyosmani.com)
+[Zeno Rocha](http://zenorocha.com) | [Addy Osmani](http://addyosmani.com) | [Helder Santana](http://heldr.com)
 
 ## Contributing
 
