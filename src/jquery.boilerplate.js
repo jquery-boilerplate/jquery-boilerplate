@@ -30,7 +30,8 @@
 				this.init();
 		}
 
-		Plugin.prototype = {
+		// Avoid Plugin.prototype conflicts
+		$.extend(Plugin.prototype, {
 				init: function () {
 						// Place initialization logic here
 						// You already have access to the DOM element and
@@ -43,7 +44,7 @@
 				yourOtherFunction: function () {
 						// some logic
 				}
-		};
+		});
 
 		// A really lightweight plugin wrapper around the constructor,
 		// preventing against multiple instantiations
