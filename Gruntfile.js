@@ -61,8 +61,8 @@ module.exports = function(grunt) {
 		// (call 'grunt watch')
 		watch: {
 		    files: ['src/*'],
-		    tasks: ['default'],
-		},
+		    tasks: ['default']
+		}
 
 	});
 
