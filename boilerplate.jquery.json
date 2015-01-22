@@ -7,7 +7,7 @@
 		"boilerplate",
 		"plugins"
 	],
-	"version": "3.3.5",
+	"version": "3.4.0",
 	"author": {
 		"name": "Zeno Rocha",
 		"email": "zno.rocha@gmail.com",
@@ -25,9 +25,9 @@
 			"url": "https://github.com/addyosmani"
 		},
 		{
-		  "name": "Helder Santana",
-		  "email": "heldr@me.com",
-		  "url": "https://github.com/heldr"
+			"name": "Helder Santana",
+			"email": "heldr@me.com",
+			"url": "https://github.com/heldr"
 		}
 	],
 	"licenses": [
