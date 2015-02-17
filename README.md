@@ -119,8 +119,8 @@ Well, extending jQuery with plugins and methods is very powerful and can save yo
 Also, check our guide on [How to publish a plugin in jQuery Plugin Registry](https://github.com/jquery-boilerplate/boilerplate/wiki/How-to-publish-a-plugin-in-jQuery-Plugin-Registry
 )!
 
-Please note that as of this day; The jQuery Plugin Registry is in read-only mode. New plugin releases will not be processed.
-jQuery recommends moving to npm, using "jquery-plugin" as the keyword in your package.json.
+**Note:** The jQuery Plugin Registry is in read-only mode. New plugin releases will not be processed.
+jQuery recommends moving to [npm](https://www.npmjs.com/), using ["jquery-plugin"](https://www.npmjs.com/browse/keyword/jquery-plugin) as the keyword in your package.json. See [how to publish into npm registry](https://gist.github.com/coolaj86/1318304).
 
 ## Team
 
