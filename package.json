@@ -1,4 +1,7 @@
 {
+  "keywords": [
+    "jquery-plugin"
+  ],
   "private": true,
   "devDependencies": {
     "grunt": "~0.4.5",
