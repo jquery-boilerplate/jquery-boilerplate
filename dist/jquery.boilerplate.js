@@ -1,14 +1,16 @@
 /*
- *  jQuery Boilerplate - v3.3.4
+ *  jquery-boilerplate - v3.4.0
  *  A jump-start for jQuery plugins development.
  *  http://jqueryboilerplate.com
  *
  *  Made by Zeno Rocha
- *  Under MIT License
+ *  Under  License
  */
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
 ;(function ( $, window, document, undefined ) {
+
+	"use strict";
 
 		// undefined is used here as the undefined global variable in ECMAScript 3 is
 		// mutable (ie. it can be changed by someone else). undefined isn't really being
@@ -57,14 +59,11 @@
 		// A really lightweight plugin wrapper around the constructor,
 		// preventing against multiple instantiations
 		$.fn[ pluginName ] = function ( options ) {
-				this.each(function() {
+				return this.each(function() {
 						if ( !$.data( this, "plugin_" + pluginName ) ) {
 								$.data( this, "plugin_" + pluginName, new Plugin( this, options ) );
 						}
 				});
-
-				// chain jQuery functions
-				return this;
 		};
 
 })( jQuery, window, document );

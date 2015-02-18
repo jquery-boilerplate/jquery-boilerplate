@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		// Import package manifest
-		pkg: grunt.file.readJSON("boilerplate.jquery.json"),
+		pkg: grunt.file.readJSON("package.json"),
 
 		// Banner definitions
 		meta: {
@@ -55,9 +55,9 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		
-		// watch for changes to source 
-		// Better than calling grunt a million times 
+
+		// watch for changes to source
+		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
 		    files: ['src/*'],
