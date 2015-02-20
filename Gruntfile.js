@@ -13,18 +13,18 @@ module.exports = function(grunt) {
 				" *  <%= pkg.homepage %>\n" +
 				" *\n" +
 				" *  Made by <%= pkg.author.name %>\n" +
-				" *  Under <%= pkg.licenses[0].type %> License\n" +
+				" *  Under <%= pkg.license %> License\n" +
 				" */\n"
 		},
 
 		// Concat definitions
 		concat: {
+			options: {
+				banner: "<%= meta.banner %>"
+			},
 			dist: {
 				src: ["src/jquery.boilerplate.js"],
 				dest: "dist/jquery.boilerplate.js"
-			},
-			options: {
-				banner: "<%= meta.banner %>"
 			}
 		},
 
