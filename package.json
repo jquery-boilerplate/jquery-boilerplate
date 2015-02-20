@@ -38,7 +38,7 @@
       "url": "https://github.com/heldr"
     }
   ],
-  "licenses": "MIT",
+  "license": "MIT",
   "private": true,
   "devDependencies": {
     "grunt": "~0.4.5",
