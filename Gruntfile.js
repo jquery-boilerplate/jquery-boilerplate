@@ -62,18 +62,58 @@ module.exports = function(grunt) {
 		watch: {
 		    files: ['src/*'],
 		    tasks: ['default']
+		},
+		// update bower.json with data from package.json
+		update_json: {
+			options: {
+				src: "package.json",
+				indent: " "
+			},
+			bower: {
+				dest: 'bower.json',
+				fields: { //to: "from",
+					name: "name",
+					version: "version",
+					description: "description",
+					repository: "repository",
+					keywords: "keywords",
+					homepage: "homepage",
+					main: "main",
+					license: "license",
+					authors: [{
+						name: "/author/name",
+						email: "/author/email",
+						homepage: "/author/url"
+					}]
+				}
+			}
+		},
+		bump: {
+			options: {
+				files: ['package.json', 'bower.json'],
+				updateConfigs: ['pkg'],
+				commit: true,
+				commitMessage: 'Release v%VERSION%',
+				commitFiles: ['-a'],
+				createTag: true,
+				tagName: 'v%VERSION%',
+				tagMessage: 'Version %VERSION%',
+				push: true,
+				pushTo: 'origin',
+				gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+				globalReplace: false,
+				prereleaseName: false,
+				regExp: false
+			}
 		}
 
 	});
 
-	grunt.loadNpmTasks("grunt-contrib-concat");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
-	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-coffee");
-	grunt.loadNpmTasks("grunt-contrib-watch");
+	require('load-grunt-tasks')(grunt); //DRY replacement for loadNpmTasks()
 
-	grunt.registerTask("build", ["concat", "uglify"]);
+	grunt.registerTask("build", ["concat", "uglify", "update_json"]);
 	grunt.registerTask("default", ["jshint", "build"]);
+	grunt.registerTask("release", ["bump"]);
 	grunt.registerTask("travis", ["default"]);
 
 };
