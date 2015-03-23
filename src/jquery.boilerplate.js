@@ -46,17 +46,20 @@
 			// You already have access to the DOM element and
 			// the options via the instance, e.g. this.element
 			// and this.settings
-			// you can add more functions like the one below and
-			// call them like so: this.yourOtherFunction(this.element, this.settings).
 			console.log("xD");
 
 			// Calling a private function that dont have access to "this",
 			// you need to pass the plugin
 			privateFunction(this);
 
+			// Calling a function that has access to "this"
+			this.yourOtherFunction();
 		},
 		yourOtherFunction: function () {
 			// some logic
+		},
+		publicFunction: function () {
+			console.log("public function with propertyName = ", this.settings.propertyName);
 		}
 	});
 
