@@ -7,11 +7,32 @@
 	</head>
 	<body>
 		<div id="element"></div>
+		<div class="element"></div>
+		<div class="element"></div>
 		<script>
 			$(function() {
 				$("#element").defaultPluginName({
 					propertyName: "a custom value"
 				});
+				// logs:
+				// xD
+				// plugin.settings.propertyName =  a custom value
+
+				// Using the plugin for many elements
+				$(".element").defaultPluginName({
+					propertyName: "other value"
+				});
+				// for each element logs:
+				// xD
+				// plugin.settings.propertyName =  other value
+
+				// Getting the plugin
+				var p1 = $("#element").data("plugin_defaultPluginName");
+
+				// Using plugin methods
+				p1.publicFunction();
+				// logs:
+				// public function with propertyName =  a custom value
 			});
 		</script>
 	</body>

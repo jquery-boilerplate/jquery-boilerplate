@@ -73,3 +73,16 @@
 	};
 
 })( jQuery, window, document );
+
+// Usage examples:
+//
+// All divs on page:
+// $('div').defaultPluginName();
+//
+// Each plugin with different options:
+// $('.element1').defaultPluginName({propertyName: "value1"});
+// $('.element2').defaultPluginName({propertyName: "value2"});
+//
+// Using methods and changing state:
+// var plugin1 = $('.element1').data('plugin_defaultPluginName');
+// plugin1.publicFunction();
