@@ -21,6 +21,11 @@
 		propertyName: "value"
 	};
 
+	// Private functions can access the plugin
+	function privateFunction(plugin) {
+		console.log("plugin.settings.propertyName = ", plugin.settings.propertyName);
+	}
+
 	// The actual plugin constructor
 	function Plugin ( element, options ) {
 		this.element = element;
@@ -44,6 +49,11 @@
 			// you can add more functions like the one below and
 			// call them like so: this.yourOtherFunction(this.element, this.settings).
 			console.log("xD");
+
+			// Calling a private function that dont have access to "this",
+			// you need to pass the plugin
+			privateFunction(this);
+
 		},
 		yourOtherFunction: function () {
 			// some logic
