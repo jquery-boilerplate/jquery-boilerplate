@@ -45,7 +45,6 @@ The basic structure of the project is given in the following way:
 ├── .gitignore
 ├── .jshintrc
 ├── .travis.yml
-├── boilerplate.jquery.json
 ├── Gruntfile.js
 └── package.json
 ```
@@ -85,12 +84,6 @@ List of rules used by JSHint to detect errors and potential problems in JavaScri
 Definitions for continous integration using Travis.
 
 > Check [travis-ci.org](http://about.travis-ci.org/) if you haven't heard about this project yet.
-
-#### [boilerplate.jquery.json](https://github.com/jquery-boilerplate/boilerplate/tree/master/boilerplate.jquery.json)
-
-Package manifest file used to publish plugins in jQuery Plugin Registry.
-
-> Check this [Package Manifest Guide](http://plugins.jquery.com/docs/package-manifest/) for more details.
 
 #### [Gruntfile.js](https://github.com/jquery-boilerplate/boilerplate/tree/master/Gruntfile.js)
 
