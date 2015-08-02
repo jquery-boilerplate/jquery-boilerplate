@@ -23,7 +23,7 @@
 
 		// Create the defaults once
 		var pluginName = "defaultPluginName",
-				defaults = {
+		defaults = {
 				propertyName: "value"
 		};
 
