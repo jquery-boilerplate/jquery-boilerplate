@@ -1,5 +1,5 @@
 /*
- *  jquery-boilerplate - v3.4.0
+ *  jquery-boilerplate - v3.5.0
  *  A jump-start for jQuery plugins development.
  *  http://jqueryboilerplate.com
  *
@@ -48,11 +48,12 @@
 						// the options via the instance, e.g. this.element
 						// and this.settings
 						// you can add more functions like the one below and
-						// call them like so: this.yourOtherFunction(this.element, this.settings).
-						console.log("xD");
+						// call them like the example bellow
+						this.yourOtherFunction("jQuery Boilerplate");
 				},
-				yourOtherFunction: function () {
+				yourOtherFunction: function (text) {
 						// some logic
+						$(this.element).text(text);
 				}
 		});
 

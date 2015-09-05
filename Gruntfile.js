@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 
 		// Lint definitions
 		jshint: {
-			files: ["src/jquery.boilerplate.js"],
+			files: ["src/jquery.boilerplate.js", "test/**/*"],
 			options: {
 				jshintrc: ".jshintrc"
 			}
@@ -56,12 +56,28 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// karma test runner
+		karma: {
+		  unit: {
+		    configFile: "karma.conf.js",
+				background: true,
+				singleRun: false,
+				browsers: ["PhantomJS"]
+		  },
+		  //continuous integration mode: run tests once in PhantomJS browser.
+		  travis: {
+		    configFile: "karma.conf.js",
+		    singleRun: true,
+		    browsers: ["PhantomJS", "Firefox"]
+		  },
+		},
+
 		// watch for changes to source
 		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
-		    files: ['src/*'],
-		    tasks: ['default']
+	    files: ["src/*", "test/**/*"],
+	    tasks: ["default"]
 		}
 
 	});
@@ -71,9 +87,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-coffee");
 	grunt.loadNpmTasks("grunt-contrib-watch");
+	grunt.loadNpmTasks("grunt-karma");
 
+	grunt.registerTask("travis", ["jshint", "karma:travis"]);
 	grunt.registerTask("build", ["concat", "uglify"]);
-	grunt.registerTask("default", ["jshint", "build"]);
-	grunt.registerTask("travis", ["default"]);
-
+	grunt.registerTask("default", ["jshint", "build", "karma:unit:run"]);
 };
