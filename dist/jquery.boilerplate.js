@@ -1,5 +1,5 @@
 /*
- *  jquery-boilerplate - v3.4.0
+ *  jquery-boilerplate - v3.5.0
  *  A jump-start for jQuery plugins development.
  *  http://jqueryboilerplate.com
  *
