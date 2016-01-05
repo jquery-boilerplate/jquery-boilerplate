@@ -9,5 +9,9 @@
 	"onevar": true,
 	"quotmark": "double",
 	"unused": true,
-	"node": true
+	"node": true,
+	"globals": {
+        	"jQuery": false,
+        	"console": false
+    }
 }
