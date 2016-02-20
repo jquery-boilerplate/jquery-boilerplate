@@ -1,13 +1,13 @@
 {
   "name": "jquery-boilerplate",
   "version": "4.0.0",
-	"license": "MIT",
-	"authors": [
+  "license": "MIT",
+  "authors": [
     "Zeno Rocha <hi@zenorocha.com>"
   ],
   "description": "A jump-start for jQuery plugins development.",
-	"homepage": "http://jqueryboilerplate.com",
-	"keywords": [
+  "homepage": "http://jqueryboilerplate.com",
+  "keywords": [
     "jquery",
     "plugin",
     "boilerplate",
@@ -15,12 +15,12 @@
     "jquery-boilerplate"
   ],
   "main": "src/jquery.boilerplate.js",
-	"dependencies": {
+  "dependencies": {
     "jquery": "1"
   },
   "ignore": [
     "npm-debug.log",
-		"bower_components",
-		"node_modules"
+    "bower_components",
+    "node_modules"
   ]
 }

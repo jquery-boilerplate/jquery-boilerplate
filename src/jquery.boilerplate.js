@@ -16,8 +16,8 @@
 		// Create the defaults once
 		var pluginName = "defaultPluginName",
 			defaults = {
-			propertyName: "value"
-		};
+				propertyName: "value"
+			};
 
 		// The actual plugin constructor
 		function Plugin ( element, options ) {
@@ -44,8 +44,8 @@
 				this.yourOtherFunction( "jQuery Boilerplate" );
 			},
 			yourOtherFunction: function( text ) {
-					// some logic
-					$( this.element ).text( text );
+				// some logic
+				$( this.element ).text( text );
 			}
 		} );
 
