@@ -1,6 +1,6 @@
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
-;(function ( $, window, document, undefined ) {
+;( function( $, window, document, undefined ) {
 
 	"use strict";
 
@@ -22,6 +22,7 @@
 		// The actual plugin constructor
 		function Plugin ( element, options ) {
 			this.element = element;
+
 			// jQuery has an extend method which merges the contents of two or
 			// more objects, storing the result in the first object. The first object
 			// is generally empty as we don't want to alter the default options for
@@ -35,6 +36,7 @@
 		// Avoid Plugin.prototype conflicts
 		$.extend( Plugin.prototype, {
 			init: function() {
+
 				// Place initialization logic here
 				// You already have access to the DOM element and
 				// the options via the instance, e.g. this.element
@@ -44,6 +46,7 @@
 				this.yourOtherFunction( "jQuery Boilerplate" );
 			},
 			yourOtherFunction: function( text ) {
+
 				// some logic
 				$( this.element ).text( text );
 			}
