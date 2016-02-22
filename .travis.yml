@@ -12,7 +12,6 @@ before_install:
 
 # Running tests
 script:
-  - grunt travis
   - grunt lint
   - grunt build
-  - grunt
+  - grunt travis
