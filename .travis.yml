@@ -5,5 +5,14 @@ node_js:
   - "0.12"
   - "0.11"
   - "0.10"
-before_script:
+
+# Install grunt-cli globally before installing all dependencies, including grunt
+before_install:
   - npm install grunt-cli -g
+
+# Running tests
+script:
+  - grunt travis
+  - grunt lint
+  - grunt build
+  - grunt
