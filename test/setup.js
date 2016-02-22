@@ -1,9 +1,10 @@
-(function ($) {
+( function( $ ) {
+
 	"use strict";
 
 	// create an element to run tests inside
-	var $testCanvas = $("<div id='testCanvas'></div>");
+	var $testCanvas = $( "<div id='testCanvas'></div>" );
 
-	$("body").prepend($testCanvas);
+	$( "body" ).prepend( $testCanvas );
 
-}(jQuery));
+}( jQuery ) );
