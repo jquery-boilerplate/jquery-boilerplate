@@ -1,5 +1,5 @@
 {
-	"preset": "jquery",
-	"requireCapitalizedComments": null,
-	"excludeFiles": [ "node_modules" ]
+  "preset": "jquery",
+  "requireCapitalizedComments": null,
+  "excludeFiles": [ "node_modules" ]
 }
