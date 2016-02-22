@@ -36,9 +36,16 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		jscs: {
+			src: "src/**/*.js",
+			options: {
+				config: ".jscsrs"
+			}
+		},
+
 		// Minify definitions
 		uglify: {
-			my_target: {
+			dist: {
 				src: [ "dist/jquery.boilerplate.js" ],
 				dest: "dist/jquery.boilerplate.min.js"
 			},
@@ -64,6 +71,7 @@ module.exports = function( grunt ) {
 				singleRun: false,
 				browsers: [ "PhantomJS", "Firefox" ]
 			},
+
 			//continuous integration mode: run tests once in PhantomJS browser.
 			travis: {
 				configFile: "karma.conf.js",
@@ -84,12 +92,14 @@ module.exports = function( grunt ) {
 
 	grunt.loadNpmTasks( "grunt-contrib-concat" );
 	grunt.loadNpmTasks( "grunt-contrib-jshint" );
+	grunt.loadNpmTasks( "grunt-jscs" );
 	grunt.loadNpmTasks( "grunt-contrib-uglify" );
 	grunt.loadNpmTasks( "grunt-contrib-coffee" );
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
 	grunt.loadNpmTasks( "grunt-karma" );
 
 	grunt.registerTask( "travis", [ "jshint", "karma:travis" ] );
+	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
 	grunt.registerTask( "build", [ "concat", "uglify" ] );
 	grunt.registerTask( "default", [ "jshint", "build", "karma:unit:run" ] );
 };
