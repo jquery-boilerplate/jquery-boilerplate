@@ -19,7 +19,10 @@ do ($ = jQuery, window, document) ->
 			# more objects, storing the result in the first object. The first object
 			# is generally empty as we don't want to alter the default options for
 			# future instances of the plugin
-			@settings = $.extend {}, defaults, options
+			# By passing `true` as the first argument, we use the deep extend
+			# functionality which makes jQuery merge the objects recursively and allows
+			# us to use nested options
+			@settings = $.extend true, {}, defaults, options
 			@_defaults = defaults
 			@_name = pluginName
 			@init()

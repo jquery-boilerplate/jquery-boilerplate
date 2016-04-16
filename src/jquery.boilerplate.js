@@ -27,7 +27,10 @@
 			// more objects, storing the result in the first object. The first object
 			// is generally empty as we don't want to alter the default options for
 			// future instances of the plugin
-			this.settings = $.extend( {}, defaults, options );
+			// By passing `true` as the first argument, we use the deep extend
+			// functionality which makes jQuery merge the objects recursively and allows
+			// us to use nested options
+			this.settings = $.extend( true, {}, defaults, options );
 			this._defaults = defaults;
 			this._name = pluginName;
 			this.init();
