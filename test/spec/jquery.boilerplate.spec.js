@@ -42,11 +42,13 @@
 	} );
 
 	QUnit.test( "enable custom config", function( assert ) {
-		var pluginData = $fixture.data( "plugin_defaultPluginName" );
+		var pluginData = {};
 
 		$fixture.defaultPluginName( {
 			foo: "bar"
 		} );
+
+		pluginData = $fixture.data( "plugin_defaultPluginName" );
 
 		assert.deepEqual(
 			pluginData.settings, {
@@ -67,10 +69,12 @@
 	QUnit.test(
 		"has #yourOtherFunction working as expected",
 		function( assert ) {
-			var instance = $fixture.data( "plugin_defaultPluginName" ),
+			var instance = {},
 				expectedText = "foobar";
 
 			$fixture.defaultPluginName();
+
+			instance = $fixture.data( "plugin_defaultPluginName" );
 
 			instance.yourOtherFunction( expectedText );
 			assert.equal( $fixture.text(), expectedText );
