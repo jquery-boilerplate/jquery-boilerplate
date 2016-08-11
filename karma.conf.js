@@ -1,5 +1,7 @@
 module.exports = function( config ) {
 
+	"use strict";
+
 	config.set( {
 		files: [
 			"node_modules/jquery/dist/jquery.js",

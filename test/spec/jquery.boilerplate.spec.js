@@ -2,8 +2,8 @@
 
 	"use strict";
 
-	var $testCanvas = $( "#testCanvas" );
-	var $fixture = null;
+	var $testCanvas = $( "#testCanvas" ),
+		$fixture = null;
 
 	QUnit.module( "jQuery Boilerplate", {
 		beforeEach: function() {
@@ -42,15 +42,16 @@
 	} );
 
 	QUnit.test( "enable custom config", function( assert ) {
+		var pluginData = {};
+
 		$fixture.defaultPluginName( {
 			foo: "bar"
 		} );
 
-		var pluginData = $fixture.data( "plugin_defaultPluginName" );
+		pluginData = $fixture.data( "plugin_defaultPluginName" );
 
 		assert.deepEqual(
-			pluginData.settings,
-			{
+			pluginData.settings, {
 				propertyName: "value",
 				foo: "bar"
 			},
@@ -68,10 +69,12 @@
 	QUnit.test(
 		"has #yourOtherFunction working as expected",
 		function( assert ) {
+			var instance = {},
+				expectedText = "foobar";
+
 			$fixture.defaultPluginName();
 
-			var instance = $fixture.data( "plugin_defaultPluginName" ),
-				expectedText = "foobar";
+			instance = $fixture.data( "plugin_defaultPluginName" );
 
 			instance.yourOtherFunction( expectedText );
 			assert.equal( $fixture.text(), expectedText );
