@@ -3,7 +3,7 @@
 # coffeescript uses (void 0) instead.
 do ($ = jQuery, window, document) ->
 
-	# window and document are passed through as local variable rather than global
+	# window and document are passed through as local variables rather than global
 	# as this (slightly) quickens the resolution process and can be more efficiently
 	# minified (especially when both are regularly referenced in your plugin).
 
